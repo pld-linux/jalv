@@ -1,12 +1,12 @@
 Summary:	Simple but fully featured LV2 host for JACK
 Summary(pl.UTF-8):	Prosty, ale w pełni funkcjonalny host LV2 dla JACK-a
 Name:		jalv
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	ISC
 Group:		Libraries
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Source0-md5:	babb0ffb0f5083d87b93def98880579d
+# Source0-md5:	23297b15cb541e0b3c5c05a2fdd9bcca
 URL:		http://drobilla.net/software/jalv/
 BuildRequires:	QtGui-devel >= 4.0.0
 BuildRequires:	gtk+2-devel >= 2:2.18.0
@@ -14,22 +14,24 @@ BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtkmm-devel >= 2.20.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.120.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	lilv-devel >= 0.14.0
-BuildRequires:	lv2-devel >= 1.0.15
+BuildRequires:	lilv-devel >= 0.15.1
+BuildRequires:	lv2-devel >= 1.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	python
-BuildRequires:	serd-devel >= 0.5.0
-BuildRequires:	sratom-devel >= 0.2.0
+BuildRequires:	serd-devel >= 0.14.0
+BuildRequires:	sord-devel >= 0.12.0
+BuildRequires:	sratom-devel >= 0.4.0
 BuildRequires:	suil-devel >= 0.6.0
 Requires:	QtGui >= 4.0.0
 Requires:	gtk+2 >= 2:2.18.0
 Requires:	gtk+3 >= 3.0.0
 Requires:	gtkmm >= 2.20.0
 Requires:	jack-audio-connection-kit-libs >= 0.120.0
-Requires:	lilv >= 0.14.0
-Requires:	lv2 >= 1.0.15
-Requires:	serd >= 0.5.0
-Requires:	sratom >= 0.2.0
+Requires:	lilv >= 0.15.1
+Requires:	lv2 >= 1.3.0
+Requires:	serd >= 0.14.0
+Requires:	sord >= 0.12.0
+Requires:	sratom >= 0.4.0
 Requires:	suil >= 0.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
