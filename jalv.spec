@@ -1,12 +1,12 @@
 Summary:	Simple but fully featured LV2 host for JACK
 Summary(pl.UTF-8):	Prosty, ale w pełni funkcjonalny host LV2 dla JACK-a
 Name:		jalv
-Version:	1.4.0
+Version:	1.4.2
 Release:	1
 License:	ISC
 Group:		Libraries
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Source0-md5:	23297b15cb541e0b3c5c05a2fdd9bcca
+# Source0-md5:	a649bbe71ecb54563764f4acbdcc84f6
 URL:		http://drobilla.net/software/jalv/
 BuildRequires:	QtGui-devel >= 4.0.0
 BuildRequires:	gtk+2-devel >= 2:2.18.0
