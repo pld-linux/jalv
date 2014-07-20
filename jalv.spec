@@ -4,7 +4,7 @@ Name:		jalv
 Version:	1.4.4
 Release:	1
 License:	ISC
-Group:		Libraries
+Group:		Applications/Sound
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
 # Source0-md5:	56aea296a43b2906cc930c1727b3835c
 URL:		http://drobilla.net/software/jalv/
@@ -67,9 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
