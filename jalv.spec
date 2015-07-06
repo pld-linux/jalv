@@ -1,12 +1,12 @@
 Summary:	Simple but fully featured LV2 host for JACK
 Summary(pl.UTF-8):	Prosty, ale w pełni funkcjonalny host LV2 dla JACK-a
 Name:		jalv
-Version:	1.4.4
+Version:	1.4.6
 Release:	1
 License:	ISC
 Group:		Applications/Sound
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Source0-md5:	56aea296a43b2906cc930c1727b3835c
+# Source0-md5:	8c11c58c4b0e69fb6b21041bcac275f7
 URL:		http://drobilla.net/software/jalv/
 BuildRequires:	QtGui-devel >= 4.0.0
 BuildRequires:	gtk+2-devel >= 2:2.18.0
@@ -14,8 +14,8 @@ BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtkmm-devel >= 2.20.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.120.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	lilv-devel >= 0.15.1
-BuildRequires:	lv2-devel >= 1.6.0
+BuildRequires:	lilv-devel >= 0.19.2
+BuildRequires:	lv2-devel >= 1.8.1
 BuildRequires:	pkgconfig
 BuildRequires:	python
 BuildRequires:	serd-devel >= 0.14.0
@@ -27,8 +27,8 @@ Requires:	gtk+2 >= 2:2.18.0
 Requires:	gtk+3 >= 3.0.0
 Requires:	gtkmm >= 2.20.0
 Requires:	jack-audio-connection-kit-libs >= 0.120.0
-Requires:	lilv >= 0.15.1
-Requires:	lv2 >= 1.6.0
+Requires:	lilv >= 0.19.2
+Requires:	lv2 >= 1.8.1
 Requires:	serd >= 0.14.0
 Requires:	sord >= 0.12.0
 Requires:	sratom >= 0.4.0
@@ -52,6 +52,7 @@ JACK-a.
 %build
 CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
+MOC=%{_bindir}/moc-qt4 \
 ./waf configure \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
