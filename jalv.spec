@@ -1,34 +1,38 @@
 Summary:	Simple but fully featured LV2 host for JACK
 Summary(pl.UTF-8):	Prosty, ale w pełni funkcjonalny host LV2 dla JACK-a
 Name:		jalv
-Version:	1.4.6
+Version:	1.6.0
 Release:	1
 License:	ISC
 Group:		Applications/Sound
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Source0-md5:	8c11c58c4b0e69fb6b21041bcac275f7
+# Source0-md5:	8390c3313c6a27f06919120de2de9348
 URL:		http://drobilla.net/software/jalv/
+BuildRequires:	Qt5Gui-devel >= 5.1.0
 BuildRequires:	QtGui-devel >= 4.0.0
 BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtkmm-devel >= 2.20.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.120.0
-BuildRequires:	libstdc++-devel
-BuildRequires:	lilv-devel >= 0.19.2
-BuildRequires:	lv2-devel >= 1.8.1
+BuildRequires:	libstdc++-devel >= 6:4.3
+BuildRequires:	lilv-devel >= 0.24.0
+BuildRequires:	lv2-devel >= 1.14.0
 BuildRequires:	pkgconfig
 BuildRequires:	python
+BuildRequires:	qt4-build >= 4.0.0
+BuildRequires:	qt5-build >= 5.1.0
 BuildRequires:	serd-devel >= 0.14.0
 BuildRequires:	sord-devel >= 0.12.0
 BuildRequires:	sratom-devel >= 0.4.0
 BuildRequires:	suil-devel >= 0.6.0
+Requires:	Qt5Gui >= 5.1.0
 Requires:	QtGui >= 4.0.0
 Requires:	gtk+2 >= 2:2.18.0
 Requires:	gtk+3 >= 3.0.0
 Requires:	gtkmm >= 2.20.0
 Requires:	jack-audio-connection-kit-libs >= 0.120.0
-Requires:	lilv >= 0.19.2
-Requires:	lv2 >= 1.8.1
+Requires:	lilv >= 0.24.0
+Requires:	lv2 >= 1.14.0
 Requires:	serd >= 0.14.0
 Requires:	sord >= 0.12.0
 Requires:	sratom >= 0.4.0
@@ -50,13 +54,15 @@ JACK-a.
 %setup -q
 
 %build
+# recent libsigc++/gtkmm requires C++11; don't use waf --strict as it adds -ansi which disables C++11
 CC="%{__cc}" \
+CXX="%{__cxx}" \
 CFLAGS="%{rpmcflags}" \
+CXXFLAGS="%{rpmcxxflags} -std=c++0x" \
 MOC=%{_bindir}/moc-qt4 \
 ./waf configure \
 	--prefix=%{_prefix} \
-	--libdir=%{_libdir} \
-	--strict
+	--libdir=%{_libdir}
 
 ./waf -v
 
@@ -76,7 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/jalv.gtk
 %attr(755,root,root) %{_bindir}/jalv.gtk3
 %attr(755,root,root) %{_bindir}/jalv.gtkmm
-%attr(755,root,root) %{_bindir}/jalv.qt
+%attr(755,root,root) %{_bindir}/jalv.qt4
+%attr(755,root,root) %{_bindir}/jalv.qt5
 %{_mandir}/man1/jalv.1*
 %{_mandir}/man1/jalv.gtk.1*
 %{_mandir}/man1/jalv.gtkmm.1*
