@@ -8,7 +8,7 @@ Group:		Applications/Sound
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
 # Source0-md5:	8390c3313c6a27f06919120de2de9348
 URL:		http://drobilla.net/software/jalv/
-BuildRequires:	Qt5Gui-devel >= 5.1.0
+BuildRequires:	Qt5Widgets-devel >= 5.1.0
 BuildRequires:	QtGui-devel >= 4.0.0
 BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	gtk+3-devel >= 3.0.0
