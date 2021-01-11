@@ -1,12 +1,12 @@
 Summary:	Simple but fully featured LV2 host for JACK
 Summary(pl.UTF-8):	Prosty, ale w pełni funkcjonalny host LV2 dla JACK-a
 Name:		jalv
-Version:	1.6.4
+Version:	1.6.6
 Release:	1
 License:	ISC
 Group:		Applications/Sound
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
-# Source0-md5:	2f7cea1ccfa5c5c6d735eb06381d6cb7
+# Source0-md5:	8fb767c57494b99b44f692967a6f65cd
 URL:		http://drobilla.net/software/jalv/
 BuildRequires:	Qt5Widgets-devel >= 5.1.0
 BuildRequires:	QtGui-devel >= 4.0.0
@@ -16,9 +16,9 @@ BuildRequires:	gtkmm-devel >= 2.20.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.120.0
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	lilv-devel >= 0.24.0
-BuildRequires:	lv2-devel >= 1.16.0
+BuildRequires:	lv2-devel >= 1.17.2
 BuildRequires:	pkgconfig
-BuildRequires:	python
+BuildRequires:	python >= 2
 BuildRequires:	qt4-build >= 4.0.0
 BuildRequires:	qt5-build >= 5.1.0
 BuildRequires:	serd-devel >= 0.24.0
@@ -32,7 +32,7 @@ Requires:	gtk+3 >= 3.0.0
 Requires:	gtkmm >= 2.20.0
 Requires:	jack-audio-connection-kit-libs >= 0.120.0
 Requires:	lilv >= 0.24.0
-Requires:	lv2 >= 1.16.0
+Requires:	lv2 >= 1.17.2
 Requires:	serd >= 0.24.0
 Requires:	sord >= 0.14.0
 Requires:	sratom >= 0.6.0
