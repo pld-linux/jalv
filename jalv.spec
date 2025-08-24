@@ -22,6 +22,7 @@ BuildRequires:	portaudio-devel >= 19
 BuildRequires:	python3 >= 1:3.2
 BuildRequires:	qt4-build >= 4.0.0
 BuildRequires:	qt5-build >= 5.1.0
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	serd-devel >= 0.30.0
 BuildRequires:	sord-devel >= 0.14.0
 BuildRequires:	sratom-devel >= 0.6.4
